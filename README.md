@@ -3,18 +3,18 @@
   <img src="./screenshots//preview.png" alt="Real-Time Tic Tac Toe Preview" width="100%" />
 </p>
 
-<h1 align="center">🎮 Real-Time Tic Tac Toe</h1>
+<h1 align="center">🎮 Realtime Tic Tac Toe</h1>
 <p align="center">No login required • Open Source • React, TypeScript, Express, Socket.io, Tailwind CSS</p>
 
 ---
 
-A fast-paced, real-time multiplayer Tic Tac Toe game. No login or signup — just enter your name and start playing instantly with friends. Built using modern web technologies with a clean UI and responsive design.
+A fast-paced, real-time multiplayer Tic Tac Toe game. No login or signup — enter your name and start playing instantly with friends. Built using modern web technologies with a clean UI and responsive design.
 Perfect for learning how to implement WebSockets and real-time communication in web apps.
 
 
 ## ✨ Features
 
-- ⚡ Real-time multiplayer using **Socket.io**.
+- ⚡ Realtime multiplayer using **Socket.io**.
 - 🧩 Simple room creation and joining system.
 - 💬 In-game **chat** support.
 - 🧑‍🎨 Support player nickname customization.
