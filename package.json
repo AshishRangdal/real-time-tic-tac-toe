@@ -4,10 +4,11 @@
     "version": "1.0.0",
     "type": "module",
     "scripts": {
+        "start": "node server/index.js",
         "dev": "concurrently \"npm run server\" \"npm run client\"",
         "client": "vite",
         "server": "tsx watch server/index.ts",
-        "build": "vite build",
+        "build": "vite build && tsc --project ./server/tsconfig.json",
         "lint": "eslint .",
         "preview": "vite preview",
         "format": "prettier --write src server"
