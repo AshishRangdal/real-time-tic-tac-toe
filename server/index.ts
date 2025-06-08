@@ -25,7 +25,7 @@ app.use(cors());
 app.use(express.json());
 
 // Serve static files from the dist directory in production
-const distPath = path.join(__dirname, "../dist");
+const distPath = path.join(__dirname, "../");
 app.use(express.static(distPath));
 
 // API health check endpoint
