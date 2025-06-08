@@ -11,7 +11,6 @@
 A fast-paced, real-time multiplayer Tic Tac Toe game. No login or signup — just enter your name and start playing instantly with friends. Built using modern web technologies with a clean UI and responsive design.
 Perfect for learning how to implement WebSockets and real-time communication in web apps.
 
----
 
 ## ✨ Features
 
@@ -26,14 +25,11 @@ Perfect for learning how to implement WebSockets and real-time communication in 
 - 📱 Responsive design for desktop and mobile.
 - 🌐 Open-source and self-hostable.
 
----
 ## 🚀 Live Preview
 
 Experience the game instantly without any signup or installation:
 
 🎮 **Play the game live →** [https://tictactoe.sahilatahar.dev/](https://tictactoe.sahilatahar.dev/)
-
----
 
 ## 🖼️ Screenshots
 <p align="center">
@@ -51,8 +47,6 @@ Experience the game instantly without any signup or installation:
   <br />
   <em>Game Board - Real-time Match + Chat</em>
 </p>
-
----
 
 ## 💻 Tech Stack
 
