@@ -21,7 +21,6 @@ export default function GameJoinForm({
 
     const handleJoinRoom = (e: React.FormEvent) => {
         e.preventDefault();
-
         if (playerName.trim() && roomCode.trim()) {
             onJoinRoom(roomCode.trim().toUpperCase(), playerName.trim());
         }
@@ -41,73 +40,75 @@ export default function GameJoinForm({
                         existing one to prove who's the real champion.
                     </p>
                 </div>
-                <form onSubmit={handleCreateRoom} className="space-y-6">
-                    {/* Player Name Input */}
-                    <div className="space-y-2">
+                {/* Player Name Input */}
+                <div className="space-y-2">
+                    <label className="flex items-center gap-2 text-base font-semibold text-white">
+                        <Trophy className="h-5 w-5 text-yellow-400" />
+                        Player Name
+                    </label>
+                    <input
+                        type="text"
+                        value={playerName}
+                        onChange={(e) => setPlayerName(e.target.value)}
+                        placeholder="e.g., LegendKiller"
+                        className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-base text-white placeholder-white/50 focus:border-transparent focus:ring-2 focus:ring-purple-400 focus:outline-none"
+                        maxLength={20}
+                    />
+                </div>
+
+                {/* Conditional Join Room Section */}
+                {isJoining && (
+                    <div className="animate-fade-in space-y-2">
                         <label className="flex items-center gap-2 text-base font-semibold text-white">
-                            <Trophy className="h-5 w-5 text-yellow-400" />
-                            Player Name
+                            <Sparkles className="h-5 w-5 text-blue-400" />
+                            Room Code
                         </label>
                         <input
                             type="text"
-                            value={playerName}
-                            onChange={(e) => setPlayerName(e.target.value)}
-                            placeholder="e.g., LegendKiller"
-                            className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-base text-white placeholder-white/50 focus:border-transparent focus:ring-2 focus:ring-purple-400 focus:outline-none"
-                            maxLength={20}
+                            value={roomCode}
+                            onChange={(e) =>
+                                setRoomCode(e.target.value.toUpperCase())
+                            }
+                            placeholder="6-digit code"
+                            maxLength={6}
+                            className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-center font-mono text-base tracking-widest text-white placeholder-white/50 focus:border-transparent focus:ring-2 focus:ring-blue-400 focus:outline-none"
                         />
                     </div>
+                )}
 
-                    {/* Conditional Join Room Section */}
-                    {isJoining && (
-                        <div className="animate-fade-in space-y-2">
-                            <label className="flex items-center gap-2 text-base font-semibold text-white">
-                                <Sparkles className="h-5 w-5 text-blue-400" />
-                                Room Code
-                            </label>
-                            <input
-                                type="text"
-                                value={roomCode}
-                                onChange={(e) =>
-                                    setRoomCode(e.target.value.toUpperCase())
-                                }
-                                placeholder="6-digit code"
-                                maxLength={6}
-                                className="w-full rounded-lg border border-white/20 bg-white/10 px-4 py-3 text-center font-mono text-base tracking-widest text-white placeholder-white/50 focus:border-transparent focus:ring-2 focus:ring-blue-400 focus:outline-none"
-                            />
-                        </div>
-                    )}
-
-                    {/* Buttons Section */}
-                    <div className="space-y-3 pt-2">
-                        {isJoining ? (
-                            <>
-                                <form onSubmit={handleJoinRoom}>
-                                    <button
-                                        type="button"
-                                        disabled={
-                                            !playerName.trim() ||
-                                            !roomCode.trim()
-                                        }
-                                        className="flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:from-blue-600 hover:to-purple-600 disabled:opacity-40"
-                                    >
-                                        <Zap className="h-5 w-5" />
-                                        Join Room
-                                    </button>
-                                </form>
+                {/* Buttons Section */}
+                <div className="space-y-3 pt-2">
+                    {isJoining ? (
+                        <>
+                            <form onSubmit={handleJoinRoom}>
                                 <button
-                                    type="button"
-                                    onClick={() => {
-                                        setIsJoining(false);
-                                        setRoomCode("");
-                                    }}
-                                    className="w-full text-sm text-white/80 underline hover:text-white"
+                                    type="submit"
+                                    disabled={
+                                        !playerName.trim() || !roomCode.trim()
+                                    }
+                                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:from-blue-600 hover:to-purple-600 disabled:opacity-40"
                                 >
-                                    ← Back to Create or Join
+                                    <Zap className="h-5 w-5" />
+                                    Join Room
                                 </button>
-                            </>
-                        ) : (
-                            <>
+                            </form>
+                            <button
+                                type="button"
+                                onClick={() => {
+                                    setIsJoining(false);
+                                    setRoomCode("");
+                                }}
+                                className="w-full text-sm text-white/80 underline hover:text-white"
+                            >
+                                ← Back to Create or Join
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            <form
+                                onSubmit={handleCreateRoom}
+                                className="space-y-6"
+                            >
                                 <button
                                     type="submit"
                                     disabled={!playerName.trim()}
@@ -116,19 +117,19 @@ export default function GameJoinForm({
                                     <Play className="h-5 w-5" />
                                     Create New Room
                                 </button>
+                            </form>
 
-                                <button
-                                    type="button"
-                                    onClick={() => setIsJoining(true)}
-                                    className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/10 py-3 font-semibold text-white transition-all duration-300 hover:bg-white/20"
-                                >
-                                    <Users className="h-5 w-5" />
-                                    Join Existing Room
-                                </button>
-                            </>
-                        )}
-                    </div>
-                </form>
+                            <button
+                                type="button"
+                                onClick={() => setIsJoining(true)}
+                                className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/10 py-3 font-semibold text-white transition-all duration-300 hover:bg-white/20"
+                            >
+                                <Users className="h-5 w-5" />
+                                Join Existing Room
+                            </button>
+                        </>
+                    )}
+                </div>
             </div>
         </div>
     );
