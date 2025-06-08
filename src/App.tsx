@@ -6,8 +6,8 @@ import { Room } from "./types/game";
 
 function App() {
     const { socket, isConnected } = useSocket();
-    const [currentRoom, setCurrentRoom] = useState<Room | null>(null);
     const [error, setError] = useState<string>("");
+    const [currentRoom, setCurrentRoom] = useState<Room | null>(null);
 
     const handleRoomCreated = ({ room }: { room: Room }) => {
         setCurrentRoom(room);
@@ -15,7 +15,6 @@ function App() {
     };
 
     const handleRoomUpdated = ({ room }: { room: Room }) => {
-        console.log(room);
         setCurrentRoom(room);
         setError("");
     };
@@ -47,7 +46,6 @@ function App() {
     }, [socket]);
 
     const handleCreateRoom = (playerName: string) => {
-        console.log(socket, isConnected);
         if (socket && isConnected) {
             socket.emit("create-room", playerName);
         } else {
@@ -56,7 +54,6 @@ function App() {
     };
 
     const handleJoinRoom = (roomCode: string, playerName: string) => {
-        console.log(socket, isConnected);
         if (socket && isConnected) {
             socket.emit("join-room", { roomCode, playerName });
         } else {

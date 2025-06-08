@@ -14,8 +14,6 @@ const chatMessages = new Map<string, ChatMessage[]>();
 
 export const setupSocketHandlers = (io: Server) => {
     io.on("connection", (socket: Socket) => {
-        console.log("User connected:", socket.id);
-
         socket.on("create-room", (playerName: string) => {
             const roomCode = generateRoomCode();
             const room: Room = {
@@ -29,8 +27,6 @@ export const setupSocketHandlers = (io: Server) => {
 
             socket.join(roomCode);
             socket.emit("room-created", { roomCode, room });
-
-            console.log(`Room ${roomCode} created by ${playerName}`);
         });
 
         socket.on("join-room", (data: JoinRoomData) => {
@@ -58,8 +54,6 @@ export const setupSocketHandlers = (io: Server) => {
 
             // Notify all players in the room
             io.to(roomCode).emit("room-updated", { room });
-
-            console.log(`${playerName} joined room ${roomCode}`);
         });
 
         socket.on("start-game", (roomCode: string) => {
@@ -77,8 +71,6 @@ export const setupSocketHandlers = (io: Server) => {
             room.gameState.isDraw = false;
 
             io.to(roomCode).emit("game-started", room);
-
-            console.log(`Game started in room ${roomCode}`);
         });
 
         socket.on("make-move", (data: MakeMoveData) => {
@@ -117,12 +109,6 @@ export const setupSocketHandlers = (io: Server) => {
             }
 
             io.to(roomCode).emit("game-updated", room.gameState);
-
-            console.log(
-                `Move made in room ${roomCode}:`,
-                position,
-                room.gameState.currentPlayer,
-            );
         });
 
         socket.on("send-message", (data: SendMessageData) => {
@@ -146,10 +132,6 @@ export const setupSocketHandlers = (io: Server) => {
             chatMessages.set(roomCode, messages);
 
             io.to(roomCode).emit("new-message", chatMessage);
-
-            console.log(
-                `Message in room ${roomCode} from ${playerName}: ${message}`,
-            );
         });
 
         socket.on("reset-game", (roomCode: string) => {
@@ -164,13 +146,9 @@ export const setupSocketHandlers = (io: Server) => {
             room.gameState.gameStarted = true;
 
             io.to(roomCode).emit("game-reset", room.gameState);
-
-            console.log(`Game reset in room ${roomCode}`);
         });
 
         socket.on("disconnect", () => {
-            console.log("User disconnected:", socket.id);
-
             // Remove player from all rooms
             for (const [roomCode, room] of rooms.entries()) {
                 const playerIndex = room.players.findIndex(
@@ -187,8 +165,6 @@ export const setupSocketHandlers = (io: Server) => {
                         // Notify remaining players
                         io.to(roomCode).emit("room-updated", room);
                     }
-
-                    console.log(`Player left room ${roomCode}`);
                     break;
                 }
             }

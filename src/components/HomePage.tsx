@@ -12,12 +12,12 @@ const HomePage: React.FC<HomePageProps> = ({ onCreateRoom, onJoinRoom }) => {
         <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
             <AnimatedBackground showParticles />
             <div className="relative z-10 flex min-h-screen flex-col items-center justify-center p-4">
+                <Header />
+                <Features />
                 <GameJoinForm
                     onCreateRoom={onCreateRoom}
                     onJoinRoom={onJoinRoom}
                 />
-                <Header />
-                <Features />
                 <Footer />
             </div>
         </div>
@@ -27,7 +27,7 @@ const HomePage: React.FC<HomePageProps> = ({ onCreateRoom, onJoinRoom }) => {
 export default HomePage;
 
 export const Header = () => (
-    <div className="animate-fade-in-up mb-16 text-center">
+    <div className="animate-fade-in-up mb-16 pt-12 text-center">
         <div className="relative mb-8 flex items-center justify-center">
             <div className="absolute inset-0 animate-pulse rounded-full bg-gradient-to-r from-purple-400 to-pink-400 opacity-30 blur-xl"></div>
             <div className="relative rounded-full border border-white/20 bg-gradient-to-br from-white/20 to-white/5 p-6 shadow-2xl backdrop-blur-xl">
@@ -37,11 +37,11 @@ export const Header = () => (
                 </div>
             </div>
         </div>
-        <h1 className="mb-6 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-6xl leading-tight font-black tracking-tight text-transparent md:text-7xl">
+        <h1 className="mb-6 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-3xl leading-tight font-black tracking-tight text-transparent sm:text-6xl md:text-7xl">
             Tic-Tac-Toe
         </h1>
         <div className="relative">
-            <h2 className="mb-6 text-2xl font-light tracking-wide text-purple-200 md:text-3xl">
+            <h2 className="mb-6 text-xl font-light tracking-wide text-purple-200 sm:text-2xl md:text-3xl">
                 Real-Time Multiplayer Experience
             </h2>
             <div className="absolute -bottom-2 left-1/2 h-1 w-32 -translate-x-1/2 transform rounded-full bg-gradient-to-r from-purple-400 to-pink-400"></div>
@@ -141,6 +141,18 @@ export const Footer = () => (
             <div className="h-px w-8 bg-gradient-to-r from-transparent to-white/30"></div>
             <span>Built with passion using React, Socket.io & TypeScript</span>
             <div className="h-px w-8 bg-gradient-to-l from-transparent to-white/30"></div>
+        </div>
+        <div className="mb-4 text-xs text-white/60">
+            Built by{" "}
+            <a
+                href="https://github.com/sahilatahar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline transition-colors hover:text-white"
+            >
+                Sahil Atahar
+            </a>{" "}
+            — just because sometimes I need it 😄
         </div>
         <div className="flex items-center justify-center gap-4 text-white/40">
             <div className="h-2 w-2 animate-pulse rounded-full bg-purple-400"></div>
