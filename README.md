@@ -30,7 +30,7 @@ Perfect for learning how to implement WebSockets and real-time communication in 
 
 Experience the game instantly without any signup or installation:
 
-🎮 **Play the game live →** [https://tictactoe.aashish.dev/](https://tictactoe.aashish.dev/)
+🎮 **Play the game live →** [https://real-time-tic-tac-toe-phoenix.vercel.app/](https://real-time-tic-tac-toe-phoenix.vercel.app/)
 
 ## 🖼️ Screenshots
 <p align="center">
@@ -111,7 +111,7 @@ This project is licensed under the [MIT License](LICENSE).
       <td align="center" valign="top">
         <img src="https://github.com/AshishRangdal.png" width="120px;" alt="Ashish Rangdal"/>
         <br />
-        <b>Ashish</b>
+        <b>Ashish Rangdal</b>
       </td>
     </tr>
     <tr>

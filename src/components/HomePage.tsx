@@ -150,7 +150,7 @@ export const Footer = () => (
                 rel="noopener noreferrer"
                 className="underline transition-colors hover:text-white"
             >
-                Ashish
+                Ashish Rangdal
             </a>{" "}
             — just because sometimes I need it 😄
         </div>
