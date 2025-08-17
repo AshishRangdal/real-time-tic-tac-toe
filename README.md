@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- Preview Banner -->
 <p align="center">
   <img src="./screenshots//preview.png" alt="Real-Time Tic Tac Toe Preview" width="100%" />
@@ -126,3 +127,7 @@ This project is licensed under the [MIT License](LICENSE).
     </tr>
   </tbody>
 </table>
+=======
+# real-time-tic-tac-toe
+real-time-tic-tac-toe
+>>>>>>> bc7af25724c5ec3914d68dc04266159fe4e2570d
