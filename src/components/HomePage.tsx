@@ -145,12 +145,12 @@ export const Footer = () => (
         <div className="mb-4 text-xs text-white/60">
             Built by{" "}
             <a
-                href="https://github.com/sahilatahar"
+                href="https://github.com/AshishRangdal"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline transition-colors hover:text-white"
             >
-                Sahil Atahar
+                Ashish
             </a>{" "}
             — just because sometimes I need it 😄
         </div>

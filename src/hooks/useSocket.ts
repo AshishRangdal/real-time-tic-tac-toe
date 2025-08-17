@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { io, Socket } from "socket.io-client";
 
 const socketUrl =
-    import.meta.env.VITE_APPLICATION_URL || "http://localhost:3000";
+    import.meta.VITE_APPLICATION_URL || "http://localhost:3000";
 
 export const useSocket = () => {
     const [socket, setSocket] = useState<Socket | null>(null);

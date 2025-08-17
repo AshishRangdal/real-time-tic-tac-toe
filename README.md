@@ -29,7 +29,7 @@ Perfect for learning how to implement WebSockets and real-time communication in 
 
 Experience the game instantly without any signup or installation:
 
-🎮 **Play the game live →** [https://tictactoe.sahilatahar.dev/](https://tictactoe.sahilatahar.dev/)
+🎮 **Play the game live →** [https://tictactoe.aashish.dev/](https://tictactoe.aashish.dev/)
 
 ## 🖼️ Screenshots
 <p align="center">
@@ -108,18 +108,18 @@ This project is licensed under the [MIT License](LICENSE).
   <tbody>
     <tr>
       <td align="center" valign="top">
-        <img src="https://github.com/sahilatahar.png" width="120px;" alt="Sahil Atahar"/>
+        <img src="https://github.com/AshishRangdal.png" width="120px;" alt="Ashish Rangdal"/>
         <br />
-        <b>Sahil Atahar</b>
+        <b>Ashish</b>
       </td>
     </tr>
     <tr>
         <td align="center">
-            <a href="https://github.com/sahilatahar">
+            <a href="https://github.com/AshishRangdal">
             <img src="https://img.shields.io/badge/GitHub-100000.svg?style=for-the-badge&logo=github&logoColor=white"/>
             </a>
             <br/>
-            <a href="https://linkedin.com/in/sahilatahar">
+            <a href="https://linkedin.com/in/AshishRangdal">
             <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"/>
             </a>
         </td>
